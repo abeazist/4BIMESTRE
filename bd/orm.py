@@ -9,6 +9,12 @@ session = sessionmaker(bind=engine)
 chamaSession = session()
 Base = declarative_base()
 
+class criarConexao:
+    def__init__(self):
+    self._connection_string = 'postgressql://postgres:postgres@localhost:5432/IMDbtrabalho3bime'
+    # self._connection_string = 'postgresql://abeazist:2DuChAswiO1F@ep-wild-field-92098951.us-east-2.aws.neon.tech/IMDb_trabalho3bime?sslmode=require'
+    
+
 
 class usuario(Base):
     __tablename__ = 'usuario'
@@ -36,9 +42,3 @@ class filmes(Base):
     
     def __repr__(self):
         return f'filmes {self.titulo}'
-
-
-
-    
-
-
