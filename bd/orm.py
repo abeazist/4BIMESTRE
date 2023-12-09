@@ -2,6 +2,7 @@ from sqlalchemy import ForeignKey, create_engine, Column, Integer, String, DATE
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 
 engine = create_engine('postgresql://postgres:postgres@localhost:5432/IMDb_trabalho3bime', echo=True) 
+from datetime import datetime
 #'postgresql://seu_usuario:senha@localhost/nome_do_banco'
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -112,5 +113,5 @@ Base.metadata.create_all(engine)
 
 #consultas abea
 query = session.query(Filmes).filter(Filmes.data_lanc > datetime.strptime('1999-01-01', '%Y-%m-%d'))
-query = session.query(Pessoa).filter_by(nome = 'Leonardo')
+query = session.query(Pessoa).filter(Pessoa.nome == 'Leonardo')
 session.close()
