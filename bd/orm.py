@@ -112,6 +112,10 @@ Base.metadata.create_all(engine)
 
 
 #consultas abea
-query = session.query(Filmes).filter(Filmes.data_lanc > datetime.strptime('1999-01-01', '%Y-%m-%d'))
-query = session.query(Pessoa).filter(Pessoa.nome == 'Leonardo')
-session.close()
+#filmes_lancados_apos_1999 = session.query(Filmes).filter(Filmes.data_lanc > datetime.strptime('1999-01-01', '%Y-%m-%d'))
+pessoas = session.query(Pessoa).filter(Pessoa.nome.ilike == '%i%')
+
+for i in pessoas:
+    print(f'Nome: {i.nome}, Sobrenome: {i.sobrenome}')
+
+#session.close()
