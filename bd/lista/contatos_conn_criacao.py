@@ -24,10 +24,10 @@ def executa_comando(conn, comando: str): #nsei praq serve ainda
 ''''''
 #criando tabela b)
 def criar_tabela_contatos():
-    conn= get_conexao_postgres("Contatos", "postgres", "postgres")
+    conn= get_conexao_postgres("Contatos", "postgres", "postgres")#conectando c o bd 
     #criando tabela contatos
-    cursor=conn.cursor()
-    cursor.execute("""
+    cursor=conn.cursor() #definindo a fuc do cursor
+    cursor.execute("""                 
         DROP TABLE IF EXISTS Contatos;
         CREATE TABLE Contatos(
                    ID INTEGER PRIMARY KEY,
@@ -80,7 +80,7 @@ def criar_tabela_contatos():
             VALUES (%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s);
         """, Contatos)
     
-    conn.commit()
+    conn.commit() #tudo que eu fiz no cod salva no bd 
 
         # Fechamento da conexão
     cursor.close()
