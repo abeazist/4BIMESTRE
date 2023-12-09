@@ -111,11 +111,30 @@ Base.metadata.create_all(engine)
 
 
 
-#consultas abea
-#filmes_lancados_apos_1999 = session.query(Filmes).filter(Filmes.data_lanc > datetime.strptime('1999-01-01', '%Y-%m-%d'))
+#Selecione as pessoas que possuem a letra "i" em seu nome
 pessoas = session.query(Pessoa).filter(Pessoa.nome.ilike == '%i%')
-
 for i in pessoas:
     print(f'Nome: {i.nome}, Sobrenome: {i.sobrenome}')
 
+#selecione todos os usuarios existentes
+usuarios = session.query(Usuario).all()
+for usuario in usuarios:
+    print(f'ID: {usuario.id_usuario}, Nome de Usuário: {usuario.nome_usuario}, Nick: {usuario.nick}')
+
+#Selecione os usuarios que avaliaram cm mais 3 estrelas em filmes de ação
+usuarios_avaliacao_acao = (
+    session.query(Usuario)
+    .join(Avalia_filmes_usuario)
+    .join(Filmes)
+    .filter(Filmes.genero == 'Romance')  
+    .filter(Avalia_filmes_usuario.classificacao > 3)
+    .all()
+)
+
+# Exibindo os resultados
+for usuario in usuarios_avaliacao_acao:
+    print(f'Nome de Usuário: {usuario.nome_usuario},Filmes: {Filmes.titulo}')
+
+
+#session.commit()
 #session.close()
