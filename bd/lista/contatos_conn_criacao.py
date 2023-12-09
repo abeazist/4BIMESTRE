@@ -10,15 +10,6 @@ def get_conexao_postgres(banco_de_dados: str, usuario: str, senha: str ):
         password= 'postgres' #senhapgAdmin entrar
     )
     return conn #retornar conexao
-'''
-def executa_comando(conn, comando: str): #nsei praq serve ainda
-    
-    cur = conn.cursor()
-    # executa um statement
-    cur.execute(comando)
-    
-    cur.close()
-'''
 
 
 ''''''
