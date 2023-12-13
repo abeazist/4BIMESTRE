@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMDB</title>
+    <script src="parte_cadastro.js" defer></script>
+  </head>
+  <body>
+    <div>
+			<div class="infoFilme">
+      <h1>Cadastro de filmes</h1>
+        <p>Informações do filme</p>
+        <label for="titulo">Título: </label>
+        <input type="text" id="titulo" placeholder="Insira o título" maxlength="100" /><br>
+
+        <label for="cod_filme">Código Filme:</label>
+        <input type="number" id="cod_filme" placeholder="Insira o código"/><br>
+
+        <label for="sinopse">Sinopse: </label>
+        <input type="text" id="sinopse" placeholder="Insira a sinopse"  maxlength="200"/><br>
+
+        <label for="datalanc">Data lançamento:</label>
+        <input type="date" id="datalanc" placeholder="Insira a data de lançamento"/><br>
+
+        <label for="classificacao">Classificação etária do filme:</label>
+        <select name="classificacao" id="opcao">
+            <option value="0">L</option>
+            <option value="1">10</option>
+            <option value="2">12</option>
+            <option value="3">14</option>
+            <option value="4">16</option>
+            <option value="5">18</option>
+        </select> <br>
+
+        <label for="duracao">Duração do filme:</label>
+        <input type="time" id="duracao" placeholder="Insira a duração" /><br>
+      
+        <button id="cadastrar" onclick="validar()">Cadastrar</button>
+      </div>
+    </div>
+  </body>
+</html>

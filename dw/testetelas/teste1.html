@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        background-color: rgb(183, 216, 183);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h3#md {
+        display: none;
+      }
+      h3#lg {
+        display: none;
+      }
+      h3#xl {
+        display: none;
+      }
+
+      /* Breakpoints */
+      /* 
+            de 640px  até 767px   - Small
+            de 768px  até 1023px  - Medium
+            de 1024px até 1279px  - Large
+            de 1280px até 1535px  - Extra large
+        */
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .container {
+          background-color: rgb(179, 179, 248);
+        }
+        h3#sm {
+          display: none;
+        }
+        h3#md {
+          display: block;
+        }
+        h3#lg {
+          display: none;
+        }
+        h3#xl {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 1024px) and (max-width: 1279px) {
+        .container {
+          background-color: rgb(224, 166, 166);
+        }
+        h3#sm {
+          display: none;
+        }
+        h3#md {
+          display: none;
+        }
+        h3#lg {
+          display: block;
+        }
+        h3#xl {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 1280px) {
+        .container {
+          background-color: rgb(238, 221, 134);
+        }
+        h3#sm {
+          display: none;
+        }
+        h3#md {
+          display: none;
+        }
+        h3#lg {
+          display: none;
+        }
+        h3#xl {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Media Queries</h1>
+
+      <h3 id="sm">Small</h3>
+      <h3 id="md">Medium</h3>
+      <h3 id="lg">Large</h3>
+      <h3 id="xl">Extra Large</h3>
+    </div>
+  </body>
+</html>

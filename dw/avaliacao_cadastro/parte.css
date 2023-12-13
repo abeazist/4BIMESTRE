@@ -1,0 +1,162 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --cor1: #b90b04;
+    --cor2: black;
+    --cor3: white;
+    --cor4: rgb(16, 16, 16);
+    --cor5: rgb(194, 194, 194);
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--cor2);
+}
+
+/* MENU STYLE */
+
+nav{
+    background-color: var(--cor1);
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav #menu-mobile{
+    background-color: var(--cor2);
+    color: var(--cor3);
+    width: 100%;
+    height: calc(100vh - 100px);
+    position: absolute;
+    transition: 0,5s;
+    right: 100%;
+    top: 100px;
+
+}
+
+nav #menu-mobile ul{
+    color: var(--cor2);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    gap: 10px;
+    height: 100%;
+    font-size: 1.5rem;
+
+}
+
+nav #menu-desktop{
+    display: none;
+}
+
+nav #menu-desktop ul{
+    color: var(--cor2);
+    list-style: none;
+    gap: 10px;
+    display: flex;
+    font-size: 1.5rem;
+}
+
+nav #av{
+    font-size: 1.5rem;
+    color: var(--cor2);
+}
+
+
+nav #icone img{
+    width: 20px;
+}
+
+nav #cadastro,#sobre,#inicio{
+    text-decoration: none;
+    color: var(--cor2);
+}
+
+/* button:hover{
+    transform: scale(1.1);
+}
+ */
+
+
+/* MAIN STYLE */
+
+
+h1{
+    color: var(--cor3);
+    align-self: center;
+}
+
+
+#box1{
+    display: flex;
+    justify-content: center;
+    padding: 40px 0 0 0;
+    background-color: var(--cor2);
+}
+
+
+.infoFilme{
+    height: 500px;
+    width: 390px;
+    padding: 10px 15px 20px;
+    color: var(--cor3);
+    background-color: var(--cor4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+label{
+    align-self: flex-start;
+    padding: 0 0 0 20px;
+}
+
+input, select{
+    background-color: var(--cor5);
+    width: 340px;
+    height: 50px;
+    border-radius: 5px;
+    border: 0;
+    padding: 0 0 0 10px;
+}
+
+button{
+    background-color: var(--cor5);
+    border-radius: 5px;
+    width: 340px;
+    height: 50px;
+    border: 0;
+}
+
+/* DESKTOP AND MOBILE */
+
+@media screen and (min-width: 768px){
+    nav #menu-mobile{
+        display: none;
+    }
+    
+    nav #icone{
+        display: none;
+    }
+
+    nav #menu-desktop{
+        display: flex;
+    }
+
+
+
+}

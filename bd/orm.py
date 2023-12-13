@@ -3,7 +3,6 @@ from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 
 engine = create_engine('postgresql://postgres:postgres@localhost:5432/IMDb_trabalho3bime', echo=True) 
 from datetime import datetime
-#'postgresql://seu_usuario:senha@localhost/nome_do_banco'
 Session = sessionmaker(bind=engine)
 session = Session()
 Base = declarative_base()
@@ -449,7 +448,6 @@ def procurar_pessoa():
 
 print("CONSULTAS")
 #SELECIONE TODOS OS USUARIOS QUE AVALIARAM FILMES COM MAIS DE 3 ESTRELAS
-# Execute a consulta utilizando a API de consulta do SQLAlchemy
 resultados = (
     session.query(Usuario.id_usuario, Usuario.nome_usuario, Filmes.titulo)
     .join(avalia_filmes_usuario, Usuario.id_usuario == avalia_filmes_usuario.id_usuario)
