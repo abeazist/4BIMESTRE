@@ -48,7 +48,7 @@ class Filmes(Base):
     pessoas_participantes = relationship('Pessoa', secondary='pessoa_participa_filmes')
     
     def __repr__(self):
-        return f'filmes {self.titulo} codigo do filme: {self.cod_filme}'
+        return f'filmes {self.titulo}'
 
 
 class Serie(Base):
@@ -449,16 +449,19 @@ def procurar_pessoa():
 
 print("CONSULTAS")
 #SELECIONE TODOS OS USUARIOS QUE AVALIARAM FILMES COM MAIS DE 3 ESTRELAS
-usuarios_avaliacao_mais_3_estrelas = (
-    session.query(Usuario)
-    .join(avalia_filmes_usuario)
+# Execute a consulta utilizando a API de consulta do SQLAlchemy
+resultados = (
+    session.query(Usuario.id_usuario, Usuario.nome_usuario, Filmes.titulo)
+    .join(avalia_filmes_usuario, Usuario.id_usuario == avalia_filmes_usuario.id_usuario)
+    .join(Filmes, Filmes.cod_filme == avalia_filmes_usuario.cod_filme)
     .filter(avalia_filmes_usuario.classificacao > 3)
+    .order_by(Usuario.id_usuario, Filmes.titulo)
     .all()
 )
 
-# Exibindo os resultados
-for usuario in usuarios_avaliacao_mais_3_estrelas:
-    print(f'ID: {usuario.id_usuario}, Nome de Usuário: {usuario.nome_usuario}, Filmes: {Filmes.titulo}')
+# Exiba os resultados
+for resultado in resultados:
+    print(f'ID: {resultado.id_usuario}, Nome de Usuário: {resultado.nome_usuario}, Filme: {resultado.titulo}')
 
 #SELECIONE TODAS AS PESSOAS QUE ESTÃO PARTICIPANDO DE TITANIC
 
@@ -470,16 +473,15 @@ for usuario in usuarios:
 #SELECIONE O NOME DE TODAS AS PESSOAS QUE PARTICIPAM DE SEUS RESPSECTIVOS FILMES
 resultados = (
     session.query(Pessoa.nome, Filmes.titulo)
-    .join(pessoa_participa_filmes)
-    .join(Filmes)
-    .join(Pessoa, pessoa_participa_filmes.c.cod_pessoa == Pessoa.cod_pessoa)
+    .join(pessoa_participa_filmes, Pessoa.cod_pessoa == pessoa_participa_filmes.cod_pessoa)
+    .join(Filmes, Filmes.cod_filme == pessoa_participa_filmes.cod_filme)
     .order_by(Pessoa.nome, Filmes.titulo)
     .all()
 )
 
 # Exiba os resultados
 for resultado in resultados:
-    print(f'Pessoa: {resultado.nome}, Filme: {resultado.titulo}')
+    print(f'Nome: {resultado.nome}, Filme: {resultado.titulo}')
 # #MENU
 
 print("O que você gostaria de fazer?")
