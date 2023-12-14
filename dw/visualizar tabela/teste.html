@@ -40,11 +40,15 @@
 nav{
     width: 100%;
     background-color: var(--cor1);
-    height: 100px;
+    height: 90px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 0px 10px 0px 10px;
+    top:0;
+    position: fixed;
+    
 }
 
 nav #menu-mobile{
@@ -53,7 +57,6 @@ nav #menu-mobile{
     color: var(--cor3);
     width: 100%;
     height: calc(100vh - 100px);
-    position: absolute;
     transition: 0,5s;
     right: 100%;
     top: 100px;
@@ -65,9 +68,10 @@ nav #menu-mobile ul{
     color: var(--cor2);
     list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    align-self: self-start;
     font-size: 1rem;
     gap: 10px;
     height: 100%;
@@ -191,7 +195,17 @@ button{
     }
 
 }
-       
+
+@media (max-width: 500px){
+    .tabela{
+      width: 30%;
+    
+    }
+    header{
+      width: 100%;
+    }
+    
+}
       
       div {
         display: flex;
@@ -230,146 +244,128 @@ button{
                       <li><a href="../visualização_filmes/index.html" id="vizualizar">Visualização</a></li>
                   </ul>
               </div>
-  
-              <div id="icone" onclick="menu()">
-                  <img src="../mostra_filmes/icones/bars-solid.svg" id="img-icone" alt="">
-              </div>
-  
-              <div id="menu-mobile">
-                  <ul>
-                      <li><a href="../mostra_filmes/index.html" id="inicio">Início</a></li>
-                      <li><a href="../cadastra_filmes/index.html" id="cadastro">Cadastrar</a></li>
-                      <li><a href="" id="vizualizar">Visualização</a></li>
-                  </ul>
-              </div>
-  
           </nav>
-          <div>
-            <table border="1">
-              <tdead>
-                <tr>
-                  <td colspan="8">TABELAS DE FILMES</td>
-                </tr>
-              </tdead>
-              <tbody>
-                <tr>
-                  <td>TÍTULO</td>
-                  <td>CÓDIGO FILME</td>
-                  <td>SINOPSE</td>
-                  <td>DATA LANÇAMENTO</td>
-                  <td>CLASSIFICAÇÃO</td>
-                  <td>DURAÇÃO</td>
-                </tr>
-                <tr>
-                  <td>O poderoso chefão</td>
-                  <td>1</td>
-                  <td>A saga da familia corleone no mundo do crime organizado</td>
-                  <td>1972-03-24</td>
-                  <td>18</td>
-                  <td>2:30</td>
-                </tr>
-                <tr>
-                  <td>Harry Potter 1</td>
-                  <td>2</td>
-                  <td>Conta a saga de um menino que foi pra escola de bruxaria</td>
-                  <td>2001-09-27</td>
-                  <td>L</td>
-                  <td>2:69</td>
-                </tr>
-                <tr>
-                  <td>Barbie as mosqueteiras</td>
-                  <td>3</td>
-                  <td>Barbie e suas amigas se tornam mosqueterias</td>
-                  <td>2004-03-05</td>
-                  <td>18</td>
-                  <td>2:30</td>
-                </tr>
-                <tr>
-                  <td>Noitão brinquedos do mal</td>
-                  <td>4</td>
-                  <td>
-                    um guarda começa a trabalhar em uma pizzaria e lá encontra
-                    brinquedos que a noite ganham vida
-                  </td>
-                  <td>2023-07-26</td>
-                  <td>14</td>
-                  <td>2:40</td>
-                </tr>
-                <tr>
-                  <td>Velozes e furiosos</td>
-                  <td>5</td>
-                  <td>muita gente furiosa correndo com carro</td>
-                  <td>2006-05-24</td>
-                  <td>16</td>
-                  <td>3:05</td>
-                </tr>
-                <tr>
-                  <td>Matrix</td>
-                  <td>6</td>
-                  <td>programadores em um mundo paralelo</td>
-                  <td>2005-06-20</td>
-                  <td>14</td>
-                  <td>2:35</td>
-                </tr>
-                <tr>
-                  <td>Jurassic-Park</td>
-                  <td>6</td>
-                  <td>
-                    turistas vão para um parque de dinossauros e lá ocorre uma
-                    tragedia
-                  </td>
-                  <td>2004-02-12</td>
-                  <td>16</td>
-                  <td>2:10</td>
-                </tr>
-                <tr>
-                  <td>Garota do seculo 20</td>
-                  <td>7</td>
-                  <td>Conta sobre um romance tragico</td>
-                  <td>2022-05-26</td>
-                  <td>16</td>
-                  <td>2:00</td>
-                </tr>
-                <tr>
-                  <td>Batman</td>
-                  <td>8</td>
-                  <td>o protagonista é um super heroi com fantasia de morcego</td>
-                  <td>2007-01-15</td>
-                  <td>14</td>
-                  <td>1:30</td>
-                </tr>
-                <tr>
-                  <td>Crepusculo 1</td>
-                  <td>9</td>
-                  <td>
-                    bela se muda para uma cidade aonde conhece eduardo que é um
-                    vampiro
-                  </td>
-                  <td>2008-08-28</td>
-                  <td>16</td>
-                  <td>3:00</td>
-                </tr>
-                <tr>
-                  <td>Star Wars</td>
-                  <td>10</td>
-                  <td>guerra nas estrelas</td>
-                  <td>2005-03-17</td>
-                  <td>10</td>
-                  <td>4:10</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="7">
-                    FIM DA TABELA
-                    
-                  </td>
-                </tr>
-              </tfoot>
-            </table>
-    </div>
-
-
-   
+          <table border="1">
+            <tdead>
+              <tr>
+                <td colspan="8">TABELAS DE FILMES</td>
+              </tr>
+            </tdead>
+            <tbody>
+              <tr>
+                <td>TÍTULO</td>
+                <td>CÓDIGO FILME</td>
+                <td>SINOPSE</td>
+                <td>DATA LANÇAMENTO</td>
+                <td>CLASSIFICAÇÃO</td>
+                <td>DURAÇÃO</td>
+              </tr>
+              <tr>
+                <td>O poderoso chefão</td>
+                <td>1</td>
+                <td>A saga da familia corleone no mundo do crime organizado</td>
+                <td>1972-03-24</td>
+                <td>18</td>
+                <td>2:30</td>
+              </tr>
+              <tr>
+                <td>Harry Potter 1</td>
+                <td>2</td>
+                <td>Conta a saga de um menino que foi pra escola de bruxaria</td>
+                <td>2001-09-27</td>
+                <td>L</td>
+                <td>2:69</td>
+              </tr>
+              <tr>
+                <td>Barbie as mosqueteiras</td>
+                <td>3</td>
+                <td>Barbie e suas amigas se tornam mosqueterias</td>
+                <td>2004-03-05</td>
+                <td>18</td>
+                <td>2:30</td>
+              </tr>
+              <tr>
+                <td>Noitão brinquedos do mal</td>
+                <td>4</td>
+                <td>
+                  um guarda começa a trabalhar em uma pizzaria e lá encontra
+                  brinquedos que a noite ganham vida
+                </td>
+                <td>2023-07-26</td>
+                <td>14</td>
+                <td>2:40</td>
+              </tr>
+              <tr>
+                <td>Velozes e furiosos</td>
+                <td>5</td>
+                <td>muita gente furiosa correndo com carro</td>
+                <td>2006-05-24</td>
+                <td>16</td>
+                <td>3:05</td>
+              </tr>
+              <tr>
+                <td>Matrix</td>
+                <td>6</td>
+                <td>programadores em um mundo paralelo</td>
+                <td>2005-06-20</td>
+                <td>14</td>
+                <td>2:35</td>
+              </tr>
+              <tr>
+                <td>Jurassic-Park</td>
+                <td>6</td>
+                <td>
+                  turistas vão para um parque de dinossauros e lá ocorre uma
+                  tragedia
+                </td>
+                <td>2004-02-12</td>
+                <td>16</td>
+                <td>2:10</td>
+              </tr>
+              <tr>
+                <td>Garota do seculo 20</td>
+                <td>7</td>
+                <td>Conta sobre um romance tragico</td>
+                <td>2022-05-26</td>
+                <td>16</td>
+                <td>2:00</td>
+              </tr>
+              <tr>
+                <td>Batman</td>
+                <td>8</td>
+                <td>o protagonista é um super heroi com fantasia de morcego</td>
+                <td>2007-01-15</td>
+                <td>14</td>
+                <td>1:30</td>
+              </tr>
+              <tr>
+                <td>Crepusculo 1</td>
+                <td>9</td>
+                <td>
+                  bela se muda para uma cidade aonde conhece eduardo que é um
+                  vampiro
+                </td>
+                <td>2008-08-28</td>
+                <td>16</td>
+                <td>3:00</td>
+              </tr>
+              <tr>
+                <td>Star Wars</td>
+                <td>10</td>
+                <td>guerra nas estrelas</td>
+                <td>2005-03-17</td>
+                <td>10</td>
+                <td>4:10</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="7">
+                  FIM DA TABELA
+                  
+                </td>
+              </tr>
+            </tfoot>
+          </table>
 </body>
 </html>
