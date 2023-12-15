@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elementos de Formulário</title>
+  </head>
+
+  <body>
+    <h2>Elementos de um formulário</h2>
+    <form action="#" method="get">
+      <label for="linguagem">Escolha uma Linguagem de Programação</label>
+      <select id="linguagens" name="linguagem">
+        <option selected disabled value="">Selecione</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="javascript">Javascript</option>
+      </select>
+
+      <hr />
+
+      <p>Selecione uma opção:</p>
+      <input type="radio" id="opcaoA" name="opcao" value="opcaoA" />
+      <label for="male">Opção A</label><br />
+      <input type="radio" id="opcaoB" name="opcao" value="opcaoB" />
+      <label for="female">Opção B</label><br />
+      <input type="radio" id="opcaoC" name="opcao" value="opcaoC" />
+      <label for="other">Opção C</label>
+
+      <hr />
+
+      <textarea
+        name="mensagem"
+        rows="10"
+        cols="30"
+        placeholder="Digite seu comentário"
+      >
+      </textarea>
+
+      <hr />
+
+      <fieldset>
+        <legend>Dados pessoais:</legend>
+        <label type="text" for="fname">Primeiro nome:</label><br />
+        <input
+          id="fname"
+          name="fname"
+          placeholder="Digite seu nome"
+        /><br />
+        <label for="lname">Sobrenome:</label><br />
+        <input
+          type="text"
+          id="lname"
+          name="lname"
+          placeholder="Digite seu sobrenome"
+        /><br /><br />
+      </fieldset>
+
+      <hr />
+
+      <input list="browsers" />
+      <datalist id="browsers">
+        <option value="Internet Explorer"></option>
+        <option value="Firefox"></option>
+        <option value="Chrome"></option>
+        <option value="Opera"></option>
+        <option value="Safari"></option>
+      </datalist>
+
+      <hr />
+      <input type="submit" value="Enviar" />
+
+      <p>
+        <label for="taste_1">I like cherry</label>
+        <input type="checkbox" id="taste_1" name="taste_cherry" value="1" />
+      </p>
+      <p>
+        <label for="taste_2">I like banana</label>
+        <input type="checkbox" id="taste_2" name="taste_banana" value="2" />
+      </p>
+      <div>
+        <label for="username">Name:</label>
+        <input type="text" name="username">
+        <label for="username"><abbr title="required">*</abbr></label>
+      </div>
+      
+      <!-- would be better done like this: -->
+      <div>
+        <label for="username">
+          <span>Name:</span>
+          <input id="username" type="text" name="username">
+          <abbr title="required">*</abbr>
+        </label>
+      </div>
+      
+      <!-- But this is probably best: -->
+      <div>
+        <label for="username">Name: <abbr title="required">*</abbr></label>
+        <input id="username" type="text" name="username">
+      </div>
+    </form>
+  </body>
+</html>

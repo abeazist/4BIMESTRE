@@ -1,0 +1,39 @@
+h1 {
+    color: green;
+  }
+  p {
+    color: yellow;
+  }
+
+  /* mobile */
+  @media(max-width: 450px) {
+    h1 {
+      color: aqua;
+    }
+    p {
+      color: pink;
+    }
+  }
+
+  /* desktop */
+  @media(max-width: 970px) {
+    h1 {
+      color: red;
+    }
+    p {
+      color: blue;
+    }
+  }
+
+  @media (min-width:768px) and (max-width:1024px){
+    h1{
+        font-family: 'Courier New', Courier, monospace;
+        color:blueviolet
+    }
+
+    p{
+        color:orangered;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+  }
